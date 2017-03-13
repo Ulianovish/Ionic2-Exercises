@@ -8,8 +8,11 @@ import { ShopPage } from '../shop/shop';
 })
 export class BuyoutPage {
 
+  public product:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(navParams);
+    this.product = navParams.data.product;
+    console.log(this.product);
   }
 
   ionViewDidLoad() {
@@ -18,6 +21,10 @@ export class BuyoutPage {
 
   public goToShopPage(){
     this.navCtrl.push(ShopPage);
+  }
+
+  public goToHomePage(){
+    this.navCtrl.popToRoot();
   }
 
 }
